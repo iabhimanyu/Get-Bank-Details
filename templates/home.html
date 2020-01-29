@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <script src="{{url_for('static',filename='ajax.js')}}"></script>
+
+  <style>
+    
+    .f1{
+      height: 20px;
+    width: 30%;
+     margin-bottom: 250px; 
+    text-align: justify;  
+  }
+  .f2{
+     height: 20px;
+    width: 30%;
+     text-align: justify;
+    margin-top: 100px;
+  }
+  </style>  
+</head>
+<body class="container">
+
+<div >
+
+  <h1 align="center">REST Service</h1>
+<div class="row">
+<div class="col col-lg-6">
+  <form class="f1" id="form">
+  <h4><strong><mark>1.</mark></strong>Get Branch Details</h4>
+    <div class="form-group">
+            <label for="inputEmail">IFSC</label>
+            <input type="text" class="form-control is-valid" id="ifsc" placeholder="Enter IFSC Code" required>
+     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+
+<div class="col col-lg-6">
+<div class="alert alert-danger"style="display:none" id="warn">  
+            <strong>Error!</strong> Please enter correct ifsc code.  
+        </div>
+
+
+<div id="myDIV"style="display:none;background-color:lightgreen">
+ <ul>
+ <li><p><b>branch </b><span id="ifs2"></span></p></li>
+ <li><p><b>address </b><span id="ifs3"></span></p></li>
+ <li><p><b>city </b><span id="ifs4"></span></p></li>
+ <li><p><b>district </b><span id="ifs5"></span></p></li>
+ <li><p><b>state </b><span id="ifs6"></span></p></li>
+ <li><p><b>bank_name </b><span id="ifs7"></span></p></li>
+ </ul>
+</div>
+
+</div>
+
+
+
+  </div>
+
+<div class="col col-lg-6">
+<form class="f2" id="form2">
+  <h4><strong><mark>2.</mark></strong>Get details of all branches of the Bank in the City</h4> 
+    <div class="form-group">
+            <label for="inputEmail">Bank Name</label>
+            <input type="text" class="form-control is-valid" id="bank" placeholder="Enter Bank Name" required>
+     </div>
+     <div class="form-group">
+            <label for="inputPassword">City</label>
+            <input type="text" class="form-control is-invalid"id="city" placeholder="Enter City Name" required>
+     </div>
+   <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  </div>
+
+  <div class="col col-lg-6">
+  <div class="alert alert-danger"style="display:none" id="warn2">  
+            <strong>Error!</strong> Can't Find What You're Looking For ?? 
+        </div>
+        <div id="myDIV2"style="display:none">
+
+        <div class="accordion" id="ac" style="height:500px;width:700px;overflow:scroll;border:solid;margin-right:200px;background-color: lightgreen;">
+        </div>
+
+  </div>
+
+</div>
+
+ <script src="{{url_for('static',filename='ajax2.js')}}"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</body>
+</html>
